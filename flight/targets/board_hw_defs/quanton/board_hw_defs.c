@@ -2207,6 +2207,37 @@ void PIOS_ADC_DMA_irq_handler(void)
 
 #endif /* PIOS_INCLUDE_ADC */
 
+#if defined(PIOS_INCLUDE_FPU)
+
+#include <pios_fpu_priv.h>
+
+/*
+ * FPU exceptions
+ */
+
+
+__attribute__((naked)) void PIOS_FPU_Handler_adapter();
+void FPU_IRQHandler() __attribute__ ((alias ("PIOS_FPU_Handler_adapter")));
+static const struct pios_fpu_cfg pios_fpu_cfg = {
+	.irq = {
+		.init = {
+			.NVIC_IRQChannel = FPU_IRQn,
+			.NVIC_IRQChannelPreemptionPriority = PIOS_IRQ_PRIO_HIGHEST,
+			.NVIC_IRQChannelSubPriority = 0,
+			.NVIC_IRQChannelCmd = ENABLE,
+		},
+	},
+};
+
+// this has to be naked in order to preserve sp and lr contents
+__attribute__((naked)) void PIOS_FPU_Handler_adapter()
+{
+	asm("b PIOS_FPU_Handler");
+}
+
+#endif /* PIOS_INCLUDE_FPU */
+
+
 /**
  * @}
  * @}

@@ -90,6 +90,8 @@
 #define PIOS_INCLUDE_FLASH_INTERNAL
 #define PIOS_INCLUDE_FLASH_JEDEC
 
+#define PIOS_INCLUDE_FPU
+
 /* Other Interfaces */
 //#define PIOS_INCLUDE_I2C_ESC
 

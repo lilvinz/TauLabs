@@ -185,6 +185,7 @@ uintptr_t pios_com_mavlink_id;
 uintptr_t pios_uavo_settings_fs_id;
 uintptr_t pios_waypoints_settings_fs_id;
 uintptr_t pios_internal_adc_id;
+uintptr_t pios_fpu_id;
 
 /*
  * Setup a com port based on the passed cfg, driver and buffer sizes. rx or tx size of 0 disables rx or tx
@@ -288,6 +289,13 @@ void PIOS_Board_Init(void) {
 	/* Delay system */
 	PIOS_DELAY_Init();
 	
+#if defined(PIOS_INCLUDE_FPU)
+	/* FPU Exceptions */
+	if (PIOS_FPU_Init(&pios_fpu_id, &pios_fpu_cfg) != 0) {
+		PIOS_DEBUG_Assert(0);
+	}
+#endif
+
 	const struct pios_board_info * bdinfo = &pios_board_info_blob;
 
 #if defined(PIOS_INCLUDE_LED)
