@@ -97,6 +97,8 @@ int32_t PIOS_FPU_Init(uintptr_t *fpu_id, const struct pios_fpu_cfg *cfg)
 	return 0;
 }
 
+// for some reason this hardfaults when built with -O0
+static void Handle_FPU_Exception(uint32_t lr, uint32_t sp) __attribute__((optimize(s)));
 static void Handle_FPU_Exception(uint32_t lr, uint32_t sp)
 {
 	PIOS_Assert(PIOS_FPU_validate(fpu_dev));
