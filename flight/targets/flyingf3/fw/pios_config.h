@@ -115,9 +115,10 @@
 #define PIOS_EVENTDISPATCHER_STACK_SIZE	256
 
 /*
- * This has been calibrated 2013/03/11 using next @ 6d21c7a590619ebbc074e60cab5e134e65c9d32b.
+ * This has been calibrated 2013/08/24 using 33cbc27193c2c42ddd3d07267f6be3719448ead5
+ * FreeRTOS 7.5.2, gcc-arm-none-eabi-4_7-2013q1, -Os
  * Calibration has been done by disabling the init task, breaking into debugger after
- * approximately after 60 seconds, then doing the following math:
+ * approximately 60 seconds, then doing the following math:
  *
  * IDLE_COUNTS_PER_SEC_AT_NO_LOAD = (uint32_t)((double)idleCounter / xTickCount * 1000 + 0.5)
  *
@@ -125,7 +126,7 @@
  * configuration like number of task priorities or similar changes.
  * A change in the cpu load calculation or the idle task handler will invalidate this as well.
  */
-#define IDLE_COUNTS_PER_SEC_AT_NO_LOAD (1459667)
+#define IDLE_COUNTS_PER_SEC_AT_NO_LOAD (1466400)
 
 #define REVOLUTION
 
