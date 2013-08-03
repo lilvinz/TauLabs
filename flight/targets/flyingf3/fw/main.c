@@ -33,6 +33,8 @@
 #include "uavobjectsinit.h"
 #include "systemmod.h"
 
+#include "trcUser.h"
+
 /* Task Priorities */
 #define PRIORITY_TASK_HOOKS             (tskIDLE_PRIORITY + 3)
 
@@ -71,6 +73,11 @@ int main()
 
 	/* Brings up System using CMSIS functions, enables the LEDs. */
 	PIOS_SYS_Init();
+
+	vTraceInitTraceData();
+	
+	if (uiTraceStart() != 1)
+		PIOS_Assert(false);
 
 	/* For Revolution we use a FreeRTOS task to bring up the system so we can */
 	/* always rely on FreeRTOS primitive */
