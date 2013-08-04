@@ -57,7 +57,7 @@
  * vTracePrintF may use multiple records depending on the number of data args.
  ******************************************************************************/
 
-#define EVENT_BUFFER_SIZE 800 /* Adjust wrt. to available RAM */
+#define EVENT_BUFFER_SIZE 700 /* Adjust wrt. to available RAM */
 
 
 /*******************************************************************************
@@ -166,7 +166,7 @@
  ******************************************************************************/
 #define NTask             15
 #define NISR              5
-#define NQueue            10
+#define NQueue            16
 #define NSemaphore        10
 #define NMutex            10
 
