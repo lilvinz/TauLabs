@@ -94,7 +94,7 @@ static void vInitStartMarkers(void);
 #include "recorderdata_linker_pragma.h"
 #endif
 
-RecorderDataType RecorderData;
+RecorderDataType __attribute__((section(".fast"))) RecorderData;
 
 #endif
 
