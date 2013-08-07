@@ -57,7 +57,7 @@
  * vTracePrintF may use multiple records depending on the number of data args.
  ******************************************************************************/
 
-#define EVENT_BUFFER_SIZE 700 /* Adjust wrt. to available RAM */
+#define EVENT_BUFFER_SIZE 1000 /* Adjust wrt. to available RAM */
 
 
 /*******************************************************************************
@@ -93,7 +93,7 @@
  * Object Table. Thus, if you don't use User Events or delete any kernel 
  * objects you set this to zero (0) to minimize RAM usage.
  ******************************************************************************/
-#define SYMBOL_TABLE_SIZE 10
+#define SYMBOL_TABLE_SIZE 1000
 
 /*******************************************************************************
  * USE_SEPARATE_USER_EVENT_BUFFER
@@ -119,7 +119,7 @@
  *
  * Only in use if USE_SEPARATE_USER_EVENT_BUFFER is set to 1.
  ******************************************************************************/
-#define USER_EVENT_BUFFER_SIZE 0
+#define USER_EVENT_BUFFER_SIZE 500
 
 /*******************************************************************************
  * USER_EVENT_CHANNELS
@@ -267,7 +267,7 @@
  * Note that Tracealyzer Professional Edition is required for User Events, 
  * they are not displayed in Tracealyzer Free Edition.
  *****************************************************************************/
-#define INCLUDE_USER_EVENTS 0
+#define INCLUDE_USER_EVENTS 1
 
 /*****************************************************************************
  * INCLUDE_READY_EVENTS
