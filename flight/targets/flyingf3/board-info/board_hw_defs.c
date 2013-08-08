@@ -226,8 +226,10 @@ static const struct pios_spi_cfg pios_spi_internal_cfg = {
 uint32_t pios_spi_internal_id;
 void PIOS_SPI_internal_irq_handler(void)
 {
+	vTraceStoreISRBegin(101);
 	/* Call into the generic code to handle the IRQ for this specific device */
 	PIOS_SPI_IRQ_Handler(pios_spi_internal_id);
+	vTraceStoreISREnd();
 }
 
 /* SPI2 Interface */
@@ -412,8 +414,10 @@ static const struct pios_spi_cfg pios_spi_2_chebuzz_external_cfg = {
 uint32_t pios_spi_2_id;
 void PIOS_SPI_2_irq_handler(void)
 {
+	vTraceStoreISRBegin(102);
 	/* Call into the generic code to handle the IRQ for this specific device */
 	PIOS_SPI_IRQ_Handler(pios_spi_2_id);
+	vTraceStoreISREnd();
 }
 
 /* SPI3 Interface */
@@ -559,8 +563,10 @@ static const struct pios_spi_cfg pios_spi_3_rcflyer_external_cfg = {
 uint32_t pios_spi_3_id;
 void PIOS_SPI_3_irq_handler(void)
 {
+	vTraceStoreISRBegin(103);
 	/* Call into the generic code to handle the IRQ for this specific device */
 	PIOS_SPI_IRQ_Handler(pios_spi_3_id);
+	vTraceStoreISREnd();
 }
 
 /**
@@ -649,14 +655,18 @@ static const struct pios_i2c_adapter_cfg pios_i2c_internal_cfg = {
 uint32_t pios_i2c_internal_id;
 void PIOS_I2C_internal_ev_irq_handler(void)
 {
+	vTraceStoreISRBegin(111);
   /* Call into the generic code to handle the IRQ for this specific device */
   PIOS_I2C_EV_IRQ_Handler(pios_i2c_internal_id);
+	vTraceStoreISREnd();
 }
 
 void PIOS_I2C_internal_er_irq_handler(void)
 {
+	vTraceStoreISRBegin(112);
   /* Call into the generic code to handle the IRQ for this specific device */
   PIOS_I2C_ER_IRQ_Handler(pios_i2c_internal_id);
+	vTraceStoreISREnd();
 }
 
 
@@ -724,14 +734,18 @@ static const struct pios_i2c_adapter_cfg pios_i2c_external_cfg = {
 uint32_t pios_i2c_external_id;
 void PIOS_I2C_external_ev_irq_handler(void)
 {
+	vTraceStoreISRBegin(113);
   /* Call into the generic code to handle the IRQ for this specific device */
   PIOS_I2C_EV_IRQ_Handler(pios_i2c_external_id);
+	vTraceStoreISREnd();
 }
 
 void PIOS_I2C_external_er_irq_handler(void)
 {
+	vTraceStoreISRBegin(114);
   /* Call into the generic code to handle the IRQ for this specific device */
   PIOS_I2C_ER_IRQ_Handler(pios_i2c_external_id);
+	vTraceStoreISREnd();
 }
 
 #endif /* PIOS_INCLUDE_I2C */

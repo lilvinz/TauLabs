@@ -123,35 +123,45 @@ static uintptr_t PIOS_USART_1_id;
 void USART1_EXTI25_IRQHandler(void) __attribute__ ((alias ("PIOS_USART_1_irq_handler")));
 static void PIOS_USART_1_irq_handler (void)
 {
+	vTraceStoreISRBegin(31);
 	PIOS_USART_generic_irq_handler (PIOS_USART_1_id);
+	vTraceStoreISREnd();
 }
 
 static uintptr_t PIOS_USART_2_id;
 void USART2_EXTI26_IRQHandler(void) __attribute__ ((alias ("PIOS_USART_2_irq_handler")));
 static void PIOS_USART_2_irq_handler (void)
 {
+	vTraceStoreISRBegin(32);
 	PIOS_USART_generic_irq_handler (PIOS_USART_2_id);
+	vTraceStoreISREnd();
 }
 
 static uintptr_t PIOS_USART_3_id;
 void USART3_EXTI28_IRQHandler(void) __attribute__ ((alias ("PIOS_USART_3_irq_handler")));
 static void PIOS_USART_3_irq_handler (void)
 {
+	vTraceStoreISRBegin(33);
 	PIOS_USART_generic_irq_handler (PIOS_USART_3_id);
+	vTraceStoreISREnd();
 }
 
 static uintptr_t PIOS_UART_4_id;
 void UART4_EXTI34_IRQHandler(void) __attribute__ ((alias ("PIOS_UART_4_irq_handler")));
 static void PIOS_UART_4_irq_handler (void)
 {
+	vTraceStoreISRBegin(34);
 	PIOS_USART_generic_irq_handler (PIOS_UART_4_id);
+	vTraceStoreISREnd();
 }
 
 static uintptr_t PIOS_UART_5_id;
 void UART5_EXTI35_IRQHandler(void) __attribute__ ((alias ("PIOS_UART_5_irq_handler")));
 static void PIOS_UART_5_irq_handler (void)
 {
+	vTraceStoreISRBegin(35);
 	PIOS_USART_generic_irq_handler (PIOS_UART_5_id);
+	vTraceStoreISREnd();
 }
 
 /**
