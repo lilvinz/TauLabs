@@ -340,92 +340,118 @@ static void PIOS_TIM_generic_irq_handler(TIM_TypeDef * timer)
 void TIM1_CC_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_1_CC_irq_handler")));
 static void PIOS_TIM_1_CC_irq_handler(void)
 {
+	vTraceStoreISRBegin(11);
 	PIOS_TIM_generic_irq_handler(TIM1);
+	vTraceStoreISREnd();
 }
 
 // The rest of TIM1 interrupts are overlapped
 void TIM1_BRK_TIM15_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_1_BRK_TIM_15_irq_handler")));
 static void PIOS_TIM_1_BRK_TIM_15_irq_handler(void)
 {
+	vTraceStoreISRBegin(12);
 	if (TIM_GetITStatus(TIM1, TIM_IT_Break)) {
 		PIOS_TIM_generic_irq_handler(TIM1);
 	} else if (TIM_GetITStatus(TIM15, TIM_IT_Update | TIM_IT_CC1 | TIM_IT_CC2 | TIM_IT_CC3 | TIM_IT_CC4 | TIM_IT_COM | TIM_IT_Trigger | TIM_IT_Break)) {
 		PIOS_TIM_generic_irq_handler(TIM15);
 	}
+	vTraceStoreISREnd();
 }
 
 void TIM1_UP_TIM16_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_1_UP_TIM_16_irq_handler")));
 static void PIOS_TIM_1_UP_TIM_16_irq_handler (void)
 {
+	vTraceStoreISRBegin(13);
 	if (TIM_GetITStatus(TIM1, TIM_IT_Update)) {
 		PIOS_TIM_generic_irq_handler(TIM1);
 	} else if (TIM_GetITStatus(TIM16, TIM_IT_Update | TIM_IT_CC1 | TIM_IT_CC2 | TIM_IT_CC3 | TIM_IT_CC4 | TIM_IT_COM | TIM_IT_Trigger | TIM_IT_Break)) {
 		PIOS_TIM_generic_irq_handler(TIM16);
 	}
+	vTraceStoreISREnd();
 }
 void TIM1_TRG_COM_TIM17_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_1_TRG_COM_TIM_17_irq_handler")));
 static void PIOS_TIM_1_TRG_COM_TIM_17_irq_handler(void)
 {
+	vTraceStoreISRBegin(14);
 	if (TIM_GetITStatus(TIM1, TIM_IT_Trigger)) {
 		PIOS_TIM_generic_irq_handler(TIM1);
 	} else if (TIM_GetITStatus(TIM17, TIM_IT_Update | TIM_IT_CC1 | TIM_IT_CC2 | TIM_IT_CC3 | TIM_IT_CC4 | TIM_IT_COM | TIM_IT_Trigger | TIM_IT_Break)) {
 		PIOS_TIM_generic_irq_handler(TIM17);
 	}
+	vTraceStoreISREnd();
 }
 
 void TIM2_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_2_irq_handler")));
 static void PIOS_TIM_2_irq_handler(void)
 {
+	vTraceStoreISRBegin(15);
 	PIOS_TIM_generic_irq_handler(TIM2);
+	vTraceStoreISREnd();
 }
 
 void TIM3_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_3_irq_handler")));
 static void PIOS_TIM_3_irq_handler(void)
 {
+	vTraceStoreISRBegin(16);
 	PIOS_TIM_generic_irq_handler(TIM3);
+	vTraceStoreISREnd();
 }
 
 void TIM4_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_4_irq_handler")));
 static void PIOS_TIM_4_irq_handler(void)
 {
+	vTraceStoreISRBegin(17);
 	PIOS_TIM_generic_irq_handler(TIM4);
+	vTraceStoreISREnd();
 }
 
 void TIM6_DAC_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_6_DAC_irq_handler")));
 static void PIOS_TIM_6_DAC_irq_handler(void)
 {
+	vTraceStoreISRBegin(18);
 	// TODO: Check for DAC
 	PIOS_TIM_generic_irq_handler(TIM6);
+	vTraceStoreISREnd();
 }
 
 void TIM7_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_7_irq_handler")));
 static void PIOS_TIM_7_irq_handler (void)
 {
+	vTraceStoreISRBegin(19);
 	PIOS_TIM_generic_irq_handler(TIM7);
+	vTraceStoreISREnd();
 }
 
 void TIM8_CC_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_8_CC_irq_handler")));
 static void PIOS_TIM_8_CC_irq_handler (void)
 {
+	vTraceStoreISRBegin(20);
 	PIOS_TIM_generic_irq_handler(TIM8);
+	vTraceStoreISREnd();
 }
 
 void TIM8_BRK_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_8_BRK_irq_handler")));
 static void PIOS_TIM_8_BRK_irq_handler (void)
 {
+	vTraceStoreISRBegin(21);
 	PIOS_TIM_generic_irq_handler(TIM8);
+	vTraceStoreISREnd();
 }
 
 void TIM8_UP_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_8_UP_irq_handler")));
 static void PIOS_TIM_8_UP_irq_handler (void)
 {
+	vTraceStoreISRBegin(22);
 	PIOS_TIM_generic_irq_handler(TIM8);
+	vTraceStoreISREnd();
 }
 
 void TIM8_TRG_COM_IRQHandler(void) __attribute__ ((alias ("PIOS_TIM_8_TRG_COM_irq_handler")));
 static void PIOS_TIM_8_TRG_COM_irq_handler (void)
 {
+	vTraceStoreISRBegin(23);
 	PIOS_TIM_generic_irq_handler(TIM8);
+	vTraceStoreISREnd();
 }
 
 /**
