@@ -57,7 +57,7 @@
  * vTracePrintF may use multiple records depending on the number of data args.
  ******************************************************************************/
 
-#define EVENT_BUFFER_SIZE 1000 /* Adjust wrt. to available RAM */
+#define EVENT_BUFFER_SIZE 900 /* Adjust wrt. to available RAM */
 
 
 /*******************************************************************************
@@ -93,7 +93,7 @@
  * Object Table. Thus, if you don't use User Events or delete any kernel 
  * objects you set this to zero (0) to minimize RAM usage.
  ******************************************************************************/
-#define SYMBOL_TABLE_SIZE 1000
+#define SYMBOL_TABLE_SIZE 10
 
 /*******************************************************************************
  * USE_SEPARATE_USER_EVENT_BUFFER
@@ -165,8 +165,8 @@
  *
  ******************************************************************************/
 #define NTask             15
-#define NISR              5
-#define NQueue            10
+#define NISR              120
+#define NQueue            16
 #define NSemaphore        10
 #define NMutex            10
 
@@ -267,7 +267,7 @@
  * Note that Tracealyzer Professional Edition is required for User Events, 
  * they are not displayed in Tracealyzer Free Edition.
  *****************************************************************************/
-#define INCLUDE_USER_EVENTS 1
+#define INCLUDE_USER_EVENTS 0
 
 /*****************************************************************************
  * INCLUDE_READY_EVENTS
@@ -317,7 +317,7 @@
  * traced kernel objects are deleted at runtime. If no deletes are made, this 
  * can be set to 0 in order to exclude the delete-handling code.
  *****************************************************************************/
-#define INCLUDE_OBJECT_DELETE 1
+#define INCLUDE_OBJECT_DELETE 0
 
 /******************************************************************************
  * CONFIGURATION RELATED TO BEHAVIOR
