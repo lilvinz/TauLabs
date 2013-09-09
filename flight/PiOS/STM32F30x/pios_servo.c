@@ -119,7 +119,7 @@ void PIOS_Servo_SetHz(const uint16_t * speeds, uint8_t banks)
 				TIM_TimeBaseStructure.TIM_Prescaler = (PIOS_PERIPHERAL_APB2_CLOCK / 1000000) - 1;
 			}
 
-			TIM_TimeBaseStructure.TIM_Period = ((1000000 / speeds[set]) - 1);
+			TIM_TimeBaseStructure.TIM_Period = 1000000 / speeds[set];
 			TIM_TimeBaseInit(chan->timer, &TIM_TimeBaseStructure);
 			set++;
 		}

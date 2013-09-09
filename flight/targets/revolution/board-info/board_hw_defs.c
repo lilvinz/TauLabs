@@ -1460,7 +1460,7 @@ static const TIM_TimeBaseInitTypeDef tim_2_3_5_time_base = {
 	.TIM_Prescaler = (PIOS_PERIPHERAL_APB1_CLOCK / 1000000) - 1,
 	.TIM_ClockDivision = TIM_CKD_DIV1,
 	.TIM_CounterMode = TIM_CounterMode_Up,
-	.TIM_Period = ((1000000 / PIOS_SERVO_UPDATE_HZ) - 1),
+	.TIM_Period = 1000000 / PIOS_SERVO_UPDATE_HZ,
 	.TIM_RepetitionCounter = 0x0000,
 };
 
@@ -1468,7 +1468,7 @@ static const TIM_TimeBaseInitTypeDef tim_9_10_11_time_base = {
 	.TIM_Prescaler = (PIOS_PERIPHERAL_APB2_CLOCK / 1000000) - 1,
 	.TIM_ClockDivision = TIM_CKD_DIV1,
 	.TIM_CounterMode = TIM_CounterMode_Up,
-	.TIM_Period = ((1000000 / PIOS_SERVO_UPDATE_HZ) - 1),
+	.TIM_Period = 1000000 / PIOS_SERVO_UPDATE_HZ,
 	.TIM_RepetitionCounter = 0x0000,
 };
 

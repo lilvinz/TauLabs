@@ -355,7 +355,7 @@ static const TIM_TimeBaseInitTypeDef tim_1_2_3_4_time_base = {
 	.TIM_Prescaler = (PIOS_SYSCLK / 1000000) - 1,
 	.TIM_ClockDivision = TIM_CKD_DIV1,
 	.TIM_CounterMode = TIM_CounterMode_Up,
-	.TIM_Period = ((1000000 / PIOS_SERVO_UPDATE_HZ) - 1),
+	.TIM_Period = 1000000 / PIOS_SERVO_UPDATE_HZ,
 	.TIM_RepetitionCounter = 0x0000,
 };
 
