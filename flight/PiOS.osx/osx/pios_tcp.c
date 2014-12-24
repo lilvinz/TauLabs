@@ -120,10 +120,10 @@ static void *PIOS_TCP_RxThread(void *tcp_dev_n)
 	 * com devices never get closed except by application "reboot"
 	 * we also never give up our mutex except for waiting
 	 */
-	while(1) {
-	
+	while (1) {
 		tcp_dev->socket_connection = accept(tcp_dev->socket, NULL, NULL);
-		if (0 > tcp_dev->socket_connection) {
+		int error = errno;
+		if (tcp_dev->socket_connection < 0) {
 			perror("Accept failed");
 			close(tcp_dev->socket);
 			exit(EXIT_FAILURE);
